@@ -1,14 +1,14 @@
 name:                onionhoo
 version:             0.1.0.0
-synopsis:            Initial project template from stack
+synopsis:            A library for fetching data on nodes in the Tor network.
 description:         Please see README.md
 homepage:            http://github.com/baumanno/onionhoo#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Oliver Baumann
 maintainer:          oliver.baumann@mailbox.org
-copyright:           value
-category:            value
+copyright:           2016 Oliver Baumann
+category:            network
 build-type:          Simple
 -- extra-source-files:
 cabal-version:       >=1.10
@@ -25,6 +25,8 @@ executable onionhoo-exe
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
                      , onionhoo
+                     , aeson
+                     , http-conduit
   default-language:    Haskell2010
 
 test-suite onionhoo-test
