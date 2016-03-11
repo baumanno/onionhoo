@@ -1,5 +1,5 @@
 name:                onionhoo
-version:             0.1.0
+version:             1.0.0
 synopsis:            A library for fetching data on nodes in the Tor network.
 description:         Please see README.md
 homepage:            http://github.com/baumanno/onionhoo#readme
