@@ -17,6 +17,7 @@ import Onionhoo.Detail
 import Onionhoo.Summary
 import Onionhoo.Uptime
 import Onionhoo.Weights
+import Control.Applicative ((<$>))
 import Data.List (intercalate)
 import qualified Data.Text as T
 import Data.Text (Text)
@@ -29,9 +30,7 @@ apiUrl = "http://onionoo.torproject.org"
 
 performRequest :: (FromJSON a)
                => String -> IO (Either String a)
-performRequest url = 
-  do res <- simpleHttp url
-     return $ eitherDecode res
+performRequest url = eitherDecode <$> simpleHttp url
 
 summaryQuery
   :: [String] -> IO (Either String Summary)
