@@ -1,4 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE TemplateHaskell #-}
 
 -- | A summary-document for bridges and relays
 module Onionhoo.Summary where
@@ -6,8 +7,9 @@ module Onionhoo.Summary where
 import qualified Onionhoo.Summary.Bridge as B (Bridge)
 import qualified Onionhoo.Summary.Relay as R (Relay)
 
-import Control.Monad (mzero)
 import Data.Aeson
+import Data.Aeson.TH
+import Data.Aeson.Types
 
 -- | A summary document containing information on bridges and relays
 data Summary =
@@ -19,13 +21,5 @@ data Summary =
           ,bridges :: [B.Bridge]} -- ^ list of bridges
   deriving (Show)
 
-instance FromJSON Summary where
-  parseJSON (Object v) = 
-    Summary <$> v .: "version" <*>
-    v .:? "next_major_version_scheduled" <*>
-    v .: "relays_published" <*>
-    v .: "relays" <*>
-    v .: "bridges_published" <*>
-    v .: "bridges"
-  parseJSON _ = mzero
-
+$(deriveFromJSON defaultOptions {fieldLabelModifier = camelTo2 '_'}
+                 ''Summary)

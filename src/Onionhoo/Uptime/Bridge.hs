@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveGeneric #-}
 
 -- | A Uptime document for bridges
 module Onionhoo.Uptime.Bridge where
@@ -7,14 +7,16 @@ module Onionhoo.Uptime.Bridge where
 import Onionhoo.History.Graph
 import Control.Monad (mzero)
 import Data.Aeson
-import Data.Aeson.TH
 import Data.Aeson.Types
+import GHC.Generics
 
 -- | Contains Uptime information for a bridge
 data Bridge =
   Bridge {fingerprint :: String
          ,uptime :: Maybe UptimeHistory}
-  deriving (Show)
+  deriving (Show, Generic)
+
+instance FromJSON Bridge
 
 data UptimeHistory =
   UptimeHistory {oneWeek :: Maybe Graph
@@ -23,9 +25,6 @@ data UptimeHistory =
                 ,oneYear :: Maybe Graph
                 ,fiveYears :: Maybe Graph}
   deriving (Show)
-
-$(deriveFromJSON defaultOptions {fieldLabelModifier = camelTo2 '_'}
-                 ''Bridge)
 
 instance FromJSON UptimeHistory where
   parseJSON (Object v) = 

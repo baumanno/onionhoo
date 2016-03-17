@@ -1,5 +1,5 @@
 {-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE DeriveGeneric #-}
 
 -- | A Uptime document for relays
 module Onionhoo.Uptime.Relay where
@@ -9,13 +9,14 @@ import Control.Monad (mzero)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Aeson.Types
+import GHC.Generics
 
 -- | Contains Uptime information for a relay
 data Relay =
   Relay {fingerprint :: String
         ,uptime :: Maybe UptimeHistory
         ,flags :: Maybe Object}
-  deriving (Show)
+  deriving (Show, Generic)
 
 data UptimeHistory =
   UptimeHistory {oneWeek :: Maybe Graph
@@ -25,8 +26,11 @@ data UptimeHistory =
                 ,fiveYears :: Maybe Graph}
   deriving (Show)
 
-$(deriveFromJSON defaultOptions {fieldLabelModifier = camelTo2 '_'}
-                 ''Relay)
+----
+-- Instance declarations
+----
+
+instance FromJSON Relay
 
 instance FromJSON UptimeHistory where
   parseJSON (Object v) = 
