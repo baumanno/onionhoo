@@ -9,11 +9,10 @@ import Control.Monad (mzero)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Aeson.Types
-import Data.Text (Text)
 
 -- | Contains Clients information for a bridge
 data Bridge =
-  Bridge {fingerprint :: Text
+  Bridge {fingerprint :: String
          ,averageClients :: Maybe ClientHistory}
   deriving (Show)
 

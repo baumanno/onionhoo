@@ -6,14 +6,13 @@ module Onionhoo.Uptime.Bridge where
 
 import Onionhoo.History.Graph
 import Control.Monad (mzero)
-import Data.Text (Text)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Aeson.Types
 
 -- | Contains Uptime information for a bridge
 data Bridge =
-  Bridge {fingerprint :: Text
+  Bridge {fingerprint :: String
          ,uptime :: Maybe UptimeHistory}
   deriving (Show)
 

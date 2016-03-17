@@ -5,12 +5,11 @@
 module Onionhoo.History.Graph where
 
 import Data.Aeson
-import Data.Text
 import GHC.Generics
 
 data Graph =
-  Graph {first :: Text
-        ,last :: Text
+  Graph {first :: String
+        ,last :: String
         ,interval :: Int
         ,factor :: Double
         ,count :: Maybe Int

@@ -3,7 +3,6 @@
 -- | A detail document for relays
 module Onionhoo.Detail.Relay where
 
-import Data.Text (Text)
 import Data.Aeson
 import Data.Aeson.Types
 import Data.Aeson.TH
@@ -11,41 +10,41 @@ import GHC.Generics
 
 -- | Contains detail information for a relay
 data Relay =
-  Relay {nickname :: Maybe Text
-        ,fingerprint :: Text
-        ,orAddresses :: [Text]
-        ,exitAddresses :: Maybe [Text]
-        ,dirAddress :: Text
-        ,lastSeen :: Text
-        ,lastChangedAddressOrPort :: Text
-        ,firstSeen :: Text
+  Relay {nickname :: Maybe String
+        ,fingerprint :: String
+        ,orAddresses :: [String]
+        ,exitAddresses :: Maybe [String]
+        ,dirAddress :: Maybe String
+        ,lastSeen :: String
+        ,lastChangedAddressOrPort :: String
+        ,firstSeen :: String
         ,running :: Bool
         ,hibernating :: Maybe Bool
-        ,flags :: Maybe [Text]
-        ,country :: Maybe Text
-        ,countryName :: Maybe Text
-        ,regionName :: Maybe Text
-        ,cityName :: Maybe Text
+        ,flags :: Maybe [String]
+        ,country :: Maybe String
+        ,countryName :: Maybe String
+        ,regionName :: Maybe String
+        ,cityName :: Maybe String
         ,latitude :: Maybe Double
         ,longitude :: Maybe Double
-        ,asNumber :: Maybe Text
-        ,asName :: Maybe Text
+        ,asNumber :: Maybe String
+        ,asName :: Maybe String
         ,consensusWeight :: Int
-        ,hostName :: Maybe Text
-        ,lastRestarted :: Maybe Text
+        ,hostName :: Maybe String
+        ,lastRestarted :: Maybe String
         ,bandwidthRate :: Maybe Int
         ,bandwidthBurst :: Maybe Int
         ,observedBandwidth :: Maybe Int
         ,advertisedBandwidth :: Maybe Int
-        ,exitPolicy :: Maybe [Text]
+        ,exitPolicy :: Maybe [String]
         ,exitPolicySummary :: Maybe Object
         ,exitPolicyV6Summary :: Maybe Object
-        ,contact :: Maybe Text
-        ,platform :: Maybe Text
+        ,contact :: Maybe String
+        ,platform :: Maybe String
         ,recommendedVersion :: Maybe Bool
-        ,effectiveFamily :: Maybe [Text]
-        ,allegedFamily :: Maybe [Text]
-        ,indirectFamily :: Maybe [Text]
+        ,effectiveFamily :: Maybe [String]
+        ,allegedFamily :: Maybe [String]
+        ,indirectFamily :: Maybe [String]
         ,consensusWeightFraction :: Maybe Double
         ,guardProbability :: Maybe Double
         ,middleProbability :: Maybe Double
@@ -54,4 +53,5 @@ data Relay =
   deriving (Show,Generic)
 
 --instance FromJSON Relay
-$(deriveFromJSON defaultOptions { fieldLabelModifier = camelTo2 '_' } ''Relay)
+$(deriveFromJSON defaultOptions {fieldLabelModifier = camelTo2 '_'}
+                 ''Relay)

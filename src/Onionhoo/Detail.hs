@@ -9,15 +9,14 @@ import qualified Onionhoo.Detail.Relay as R (Relay)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Aeson.Types
-import Data.Text (Text)
 
 -- | A summary document containing information on bridges and relays
 data Detail =
-  Detail {version :: Text -- ^ the current API version
-         ,nextMajorVersionScheduled :: Maybe Text -- ^ optional
-         ,relaysPublished :: Text -- ^ UTC date when the list of relays was published
+  Detail {version :: String -- ^ the current API version
+         ,nextMajorVersionScheduled :: Maybe String -- ^ optional
+         ,relaysPublished :: String -- ^ UTC date when the list of relays was published
          ,relays :: [R.Relay] -- ^ list of relays
-         ,bridgesPublished :: Text -- ^ UTC date when the list of bridges was published
+         ,bridgesPublished :: String -- ^ UTC date when the list of bridges was published
          ,bridges :: [B.Bridge]} -- ^ list of bridges
   deriving (Show)
 

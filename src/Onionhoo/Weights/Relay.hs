@@ -4,14 +4,13 @@
 -- | A Weights document for relays
 module Onionhoo.Weights.Relay where
 
-import Data.Text (Text)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Aeson.Types
 
 -- | Contains Weights information for a relay
 data Relay =
-  Relay {fingerprint :: Text
+  Relay {fingerprint :: String
         ,consensusWeightFraction :: Maybe Object
         ,guardProbability :: Maybe Object
         ,middleProbability :: Maybe Object

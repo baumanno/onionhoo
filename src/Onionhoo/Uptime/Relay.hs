@@ -6,14 +6,13 @@ module Onionhoo.Uptime.Relay where
 
 import Onionhoo.History.Graph
 import Control.Monad (mzero)
-import Data.Text (Text)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Aeson.Types
 
 -- | Contains Uptime information for a relay
 data Relay =
-  Relay {fingerprint :: Text
+  Relay {fingerprint :: String
         ,uptime :: Maybe UptimeHistory
         ,flags :: Maybe Object}
   deriving (Show)

@@ -5,15 +5,13 @@
 module Onionhoo.Bandwidth.Relay where
 
 import Onionhoo.History.Graph
-
-import Data.Text (Text)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Aeson.Types
 
 -- | Contains Bandwidth information for a relay
 data Relay =
-  Relay {fingerprint :: Text
+  Relay {fingerprint :: String
         ,writeHistory :: Maybe Object
         ,readHistory :: Maybe Object
         }
