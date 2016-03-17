@@ -6,8 +6,9 @@ module Onionhoo.Query
        , detailQuery
        , bandwidthQuery
        , clientsQuery
-       , weightsQuery,
-       uptimeQuery)
+       , weightsQuery
+       , uptimeQuery
+       , module Onionhoo.Summary)
        where
 
 -- import the different document-types
@@ -26,7 +27,7 @@ import Data.Aeson
 import Data.Maybe
 
 apiUrl :: String
-apiUrl = "http://onionoo.torproject.org"
+apiUrl = "https://onionoo.torproject.org"
 
 performRequest :: (FromJSON a)
                => String -> IO (Either String a)

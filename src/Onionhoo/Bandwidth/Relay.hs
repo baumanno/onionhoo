@@ -13,8 +13,7 @@ import Data.Aeson.Types
 data Relay =
   Relay {fingerprint :: String
         ,writeHistory :: Maybe Object
-        ,readHistory :: Maybe Object
-        }
+        ,readHistory :: Maybe Object}
   deriving (Show)
 
 $(deriveFromJSON defaultOptions {fieldLabelModifier = camelTo2 '_'}
