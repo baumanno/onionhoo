@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Uptime document for bridges
-module Onionhoo.Uptime.Bridge (Bridge) where
+module Onionhoo.Uptime.Bridge where
 
 import Onionhoo.History.Graph
 import Control.Monad (mzero)

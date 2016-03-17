@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings, DeriveGeneric #-}
 
 -- | A summary document for relays
-module Onionhoo.Summary.Relay (Relay) where
+module Onionhoo.Summary.Relay where
 
 import Data.Text (Text)
 import Data.Aeson

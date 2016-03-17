@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Weights-document for bridges and relays
-module Onionhoo.Weights (Weights) where
+module Onionhoo.Weights where
 
 import qualified Onionhoo.Weights.Relay as R (Relay)
 

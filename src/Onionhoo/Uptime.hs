@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Uptime-document for bridges and relays
-module Onionhoo.Uptime (Uptime) where
+module Onionhoo.Uptime where
 
 import qualified Onionhoo.Uptime.Bridge as B (Bridge)
 import qualified Onionhoo.Uptime.Relay as R (Relay)

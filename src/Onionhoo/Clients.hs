@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Clients-document for bridges and relays
-module Onionhoo.Clients (Clients) where
+module Onionhoo.Clients where
 
 import qualified Onionhoo.Clients.Bridge as B (Bridge)
 

@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 -- | A summary-document for bridges and relays
-module Onionhoo.Summary (Summary) where
+module Onionhoo.Summary where
 
 import qualified Onionhoo.Summary.Bridge as B (Bridge)
 import qualified Onionhoo.Summary.Relay as R (Relay)

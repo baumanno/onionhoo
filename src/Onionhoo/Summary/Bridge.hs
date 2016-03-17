@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings, DeriveGeneric #-}
 
 -- | A summary document for bridges
-module Onionhoo.Summary.Bridge (Bridge) where
+module Onionhoo.Summary.Bridge where
 
 import Data.Text (Text)
 import Data.Aeson

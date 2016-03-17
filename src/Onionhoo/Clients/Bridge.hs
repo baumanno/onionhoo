@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Clients document for bridges
-module Onionhoo.Clients.Bridge (Bridge, ClientHistory) where
+module Onionhoo.Clients.Bridge where
 
 import Onionhoo.History.Graph
 import Control.Monad (mzero)

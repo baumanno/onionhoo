@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Bandwidth document for relays
-module Onionhoo.Bandwidth.Relay (Relay) where
+module Onionhoo.Bandwidth.Relay where
 
 import Onionhoo.History.Graph
 

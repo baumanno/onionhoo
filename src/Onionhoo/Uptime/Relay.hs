@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Uptime document for relays
-module Onionhoo.Uptime.Relay (Relay) where
+module Onionhoo.Uptime.Relay where
 
 import Onionhoo.History.Graph
 import Control.Monad (mzero)

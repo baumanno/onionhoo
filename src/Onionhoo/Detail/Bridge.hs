@@ -3,7 +3,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A detail document for bridges
-module Onionhoo.Detail.Bridge (Bridge) where
+module Onionhoo.Detail.Bridge where
 
 import Data.Text (Text)
 import Data.Aeson

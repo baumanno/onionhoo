@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Bandwidth document for bridges
-module Onionhoo.Bandwidth.Bridge (Bridge) where
+module Onionhoo.Bandwidth.Bridge where
 
 import Data.Text (Text)
 import Data.Aeson

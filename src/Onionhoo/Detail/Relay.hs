@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings, DeriveGeneric, TemplateHaskell #-}
 
 -- | A detail document for relays
-module Onionhoo.Detail.Relay (Relay) where
+module Onionhoo.Detail.Relay where
 
 import Data.Text (Text)
 import Data.Aeson

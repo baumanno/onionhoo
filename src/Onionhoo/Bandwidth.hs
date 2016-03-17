@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Bandwidth-document for bridges and relays
-module Onionhoo.Bandwidth (Bandwidth) where
+module Onionhoo.Bandwidth where
 
 import qualified Onionhoo.Bandwidth.Bridge as B (Bridge)
 import qualified Onionhoo.Bandwidth.Relay as R (Relay)

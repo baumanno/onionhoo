@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A Weights document for relays
-module Onionhoo.Weights.Relay (Relay) where
+module Onionhoo.Weights.Relay where
 
 import Data.Text (Text)
 import Data.Aeson

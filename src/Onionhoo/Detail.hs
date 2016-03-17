@@ -2,7 +2,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 -- | A detail-document for bridges and relays
-module Onionhoo.Detail (Detail) where
+module Onionhoo.Detail where
 
 import qualified Onionhoo.Detail.Bridge as B (Bridge)
 import qualified Onionhoo.Detail.Relay as R (Relay)
