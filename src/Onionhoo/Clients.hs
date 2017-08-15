@@ -11,14 +11,13 @@ import Data.Aeson.TH
 import Data.Aeson.Types
 
 -- | A Clients document containing information on bridges and relays
-data Clients =
-  Clients {version :: String -- ^ the current API version
-          ,nextMajorVersionScheduled :: Maybe String -- ^ optional
-          ,relaysPublished :: String -- ^ UTC date when the list of relays was published
-          ,relays :: Array -- ^ list of relays
-          ,bridgesPublished :: String -- ^ UTC date when the list of bridges was published
-          ,bridges :: [B.Bridge]} -- ^ list of bridges
-  deriving (Show)
+data Clients = Clients
+  { version :: String -- ^ the current API version
+  , nextMajorVersionScheduled :: Maybe String -- ^ optional
+  , relaysPublished :: String -- ^ UTC date when the list of relays was published
+  , relays :: Array -- ^ list of relays
+  , bridgesPublished :: String -- ^ UTC date when the list of bridges was published
+  , bridges :: [B.Bridge] -- ^ list of bridges
+  } deriving (Show)
 
-$(deriveFromJSON defaultOptions {fieldLabelModifier = camelTo2 '_'}
-                 ''Clients)
+$(deriveFromJSON defaultOptions {fieldLabelModifier = camelTo2 '_'} ''Clients)

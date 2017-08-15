@@ -4,35 +4,31 @@
 -- | A Clients document for bridges
 module Onionhoo.Clients.Bridge where
 
-import Onionhoo.History.Graph
 import Control.Monad (mzero)
 import Data.Aeson
 import Data.Aeson.TH
 import Data.Aeson.Types
+import Onionhoo.History.Graph
 
 -- | Contains Clients information for a bridge
-data Bridge =
-  Bridge {fingerprint :: String
-         ,averageClients :: Maybe ClientHistory}
-  deriving (Show)
+data Bridge = Bridge
+  { fingerprint :: String
+  , averageClients :: Maybe ClientHistory
+  } deriving (Show)
 
-data ClientHistory =
-  ClientHistory {oneWeek :: Maybe Graph
-                ,oneMonth :: Maybe Graph
-                ,threeMonths :: Maybe Graph
-                ,oneYear :: Maybe Graph
-                ,fiveYears :: Maybe Graph}
-  deriving (Show)
+data ClientHistory = ClientHistory
+  { oneWeek :: Maybe Graph
+  , oneMonth :: Maybe Graph
+  , threeMonths :: Maybe Graph
+  , oneYear :: Maybe Graph
+  , fiveYears :: Maybe Graph
+  } deriving (Show)
 
-$(deriveFromJSON defaultOptions {fieldLabelModifier = camelTo2 '_'}
-                 ''Bridge)
+$(deriveFromJSON defaultOptions {fieldLabelModifier = camelTo2 '_'} ''Bridge)
 
 instance FromJSON ClientHistory where
-  parseJSON (Object v) = 
-    ClientHistory <$>
-    v .:? "1_week" <*>
-    v .:? "1_month" <*>
-    v .:? "3_months" <*>
+  parseJSON (Object v) =
+    ClientHistory <$> v .:? "1_week" <*> v .:? "1_month" <*> v .:? "3_months" <*>
     v .:? "1_year" <*>
     v .:? "5_years"
   parseJSON _ = mzero
